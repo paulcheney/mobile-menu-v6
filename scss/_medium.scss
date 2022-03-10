@@ -1,0 +1,22 @@
+//  ----------------------- NAVIGATION ---------------------------
+#theButton {display: none;}
+nav#override {
+	position: static;
+	width: auto;
+	height: auto;
+	ul {
+		position: static;
+		width: auto;
+		height: auto;
+		padding: 0;
+		padding-left: 2vw;
+		display: flex;
+		justify-content: flex-start;
+	}
+	
+	
+	ul li a {
+		padding: .9rem 1rem;
+		font-size: .9rem;
+	}// end anchor
+} // end nav

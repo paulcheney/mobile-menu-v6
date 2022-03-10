@@ -1,0 +1,94 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/* BODY  */
+body {
+	font-family: $defaultFont;
+	font-size: 16px;
+	font-weight: $lightWeight;
+  min-width: 320px;
+	transition: transform 500ms ease;
+}
+body.open {transform: translate3d(-200px, 0, 0);}
+
+body header button span:nth-child(1) {display: block;}
+body header button span:nth-child(2) {display: none;}
+body.open header button span:nth-child(1) {display: none;}
+body.open header button span:nth-child(2) {display: block;}
+
+
+
+/* HEADER  */
+header {
+	display: grid;
+	grid-template-columns: auto 44px;
+	padding: 1rem 2vw;
+	h1 {font-size: 1.6rem;}
+	h2 {font-size: 1.2rem;}
+	button {
+		margin: 0;
+		align-self: start;
+		background: none;
+		border: none;
+		font-size: 2rem;
+		color: #444;
+	}
+} // end header
+
+
+
+/*  ----------------------- NAVIGATION --------------------------- */
+
+nav {
+	position: absolute;
+	width: 200px;
+	transform: translate3d(200px, 0, 0);
+	top: 0;
+	right: 0;
+	height: 100%;
+	background: #eee;
+	span {
+		display: block;
+		text-align: center;
+		padding: .5rem;
+		font-size: 1.1rem;
+		background-color: #666;
+		color: #fff;
+	}
+	ul li a {
+		display: block;
+		padding: .9rem .5rem;
+		text-align: right;
+		border-bottom: 1px rgba(0,0,0,0.25) solid;
+		text-decoration: none;
+		color: black;
+	}
+	ul li a:hover {
+		background-color: #333;
+		color: #eee;
+	}
+	li.active a {color: $primaryColor;}
+} // end nav
+
+
+/* MAIN  */
+main {
+	
+ 	p {padding: .5rem 2vw;}
+	h1 {padding: .5rem 2vw; font-size: 2rem; color: $primaryColor;}
+} // end main
+
+
+
+/* FOOTER  */
+footer {
+	background-color: black; 
+	padding: 1rem 0;
+	color: #eee;
+	text-align: center;
+	a{color: #eee;}
+}
