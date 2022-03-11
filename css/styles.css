@@ -120,6 +120,9 @@ body.open header button span:nth-child(1) {
 body.open header button span:nth-child(2) {
   display: block; }
 
+body.open nav {
+  display: block; }
+
 /* HEADER  */
 header {
   display: grid;
@@ -139,6 +142,7 @@ header {
 
 /*  ----------------------- NAVIGATION --------------------------- */
 nav {
+  display: none;
   position: absolute;
   width: 200px;
   transform: translate3d(200px, 0, 0);
