@@ -11,15 +11,18 @@ body {
 	font-size: 16px;
 	font-weight: $lightWeight;
   min-width: 320px;
-	transition: transform 500ms ease;
+	overflow-x: hidden; // hides vertical scroll bar during slide effect
 }
-body.open {transform: translate3d(-200px, 0, 0);}
 
-body header button span:nth-child(1) {display: block;}
-body header button span:nth-child(2) {display: none;}
-body.open header button span:nth-child(1) {display: none;}
-body.open header button span:nth-child(2) {display: block;}
-body.open nav {display: block;}
+/* OFF CANVAS STUFF  */
+#pageWrapper{transition: transform 500ms ease;}
+#pageWrapper.open {transform: translate3d(-180px, 0, 0);}
+
+#pageWrapper header button span:nth-child(1) {display: block;}
+#pageWrapper header button span:nth-child(2) {display: none;}
+#pageWrapper.open header button span:nth-child(1) {display: none;}
+#pageWrapper.open header button span:nth-child(2) {display: block;}
+
 
 
 /* HEADER  */
@@ -44,14 +47,14 @@ header {
 /*  ----------------------- NAVIGATION --------------------------- */
 
 nav {
-	display: none;
-	position: absolute;
-	width: 200px;
-	transform: translate3d(200px, 0, 0);
+	position: fixed; // relative to the viewport
 	top: 0;
 	right: 0;
+	width: 180px;
 	height: 100%;
+	transform: translate3d(100%, 0, 0);
 	background: #eee;
+	
 	span {
 		display: block;
 		text-align: center;
@@ -78,7 +81,6 @@ nav {
 
 /* MAIN  */
 main {
-	
  	p {padding: .5rem 2vw;}
 	h1 {padding: .5rem 2vw; font-size: 2rem; color: $primaryColor;}
 } // end main
